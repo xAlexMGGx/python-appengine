@@ -1,0 +1,8 @@
+runtime: python39
+service: default
+instance_class: F1
+entrypoint: gunicorn -b :$PORT main:app
+
+handlers:
+- url: /.*
+  script: auto
